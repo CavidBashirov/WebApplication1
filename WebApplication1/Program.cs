@@ -17,7 +17,7 @@ if (app.Environment.IsDevelopment())
 }
 
 
-var port = Environment.GetEnvironmentVariable("PORT") ?? "3000"; // Railway portunu istifadə et
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080"; // Railway portunu istifadə et
 app.Urls.Add($"http://0.0.0.0:{port}");
 
 app.UseHttpsRedirection();
