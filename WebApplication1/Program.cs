@@ -24,6 +24,6 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.MapControllers();
+app.MapGet("/", () => "Hello, Railway!");
 
 app.Run();
