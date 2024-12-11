@@ -1,4 +1,4 @@
-var builder = WebApplication.CreateBuilder(args);
+﻿var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
@@ -16,6 +16,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+
+var port = Environment.GetEnvironmentVariable("PORT") ?? "3000"; // Railway portunu istifadə et
+app.Urls.Add($"http://0.0.0.0:{port}");
 
 app.UseHttpsRedirection();
 
