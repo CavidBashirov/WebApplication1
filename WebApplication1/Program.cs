@@ -10,11 +10,14 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+//if (app.Environment.IsDevelopment())
+//{
+//    app.UseSwagger();
+//    app.UseSwaggerUI();
+//}
+
+app.UseSwagger();
+app.UseSwaggerUI();
 
 
 var port = Environment.GetEnvironmentVariable("PORT") ?? "8080"; // Railway portunu istifadə et
@@ -24,6 +27,6 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.MapGet("/", () => "Hello, Railway!");
+app.MapControllers();
 
 app.Run();
